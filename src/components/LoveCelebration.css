@@ -1,0 +1,15 @@
+.love-finale{position:fixed;inset:0;z-index:20;min-height:0;padding:30px 22px;background:radial-gradient(ellipse at center,#fff8fb 0%,#f9e7ef 65%,#f4d9e5 100%);display:flex;flex-direction:column;justify-content:center;align-items:center;overflow:auto;text-align:center}
+.heart-shower{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.flying-heart{position:absolute;fill:currentColor;stroke-width:1;opacity:0;animation:heart-takeoff var(--duration) var(--delay) ease-out both;will-change:transform,opacity}
+.finale-message{position:relative;z-index:1;color:#ac476c;flex-shrink:0;margin:auto 0}
+.finale-main-heart{fill:#e996b640;animation:finale-heartbeat 2s ease-in-out infinite;filter:drop-shadow(0 8px 22px #ce66822b)}
+.finale-wait{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(25px,5vw,37px);margin:28px 0 0;color:#954561}
+.finale-title{font-size:clamp(64px,13vw,116px);font-style:italic;font-weight:400;line-height:1.2;margin:22px 0 0;color:#a64065;outline:none;animation:love-reveal 1.3s ease both}
+.finale-nickname{display:block;font-size:clamp(30px,7vw,58px);margin-top:8px;letter-spacing:-.5px}
+.finale-delivery{position:relative;z-index:1;width:min(100%,480px);font-size:13px;color:#966577;animation:love-reveal 1s ease both;flex-shrink:0;margin-top:25px}
+.finale-delivery p{display:flex;align-items:center;justify-content:center;gap:8px;margin:0 0 14px}
+.finale-delivery .primary{font-size:13px;min-height:42px;padding:9px 20px}
+@keyframes heart-takeoff{0%{opacity:0;transform:translate3d(0,80px,0) rotate(0deg) scale(.45)}15%{opacity:.8}70%{opacity:.7}100%{opacity:0;transform:translate3d(var(--drift),-105vh,0) rotate(var(--rotation)) scale(1.08)}}
+@keyframes finale-heartbeat{50%{transform:scale(1.1)}}
+@keyframes love-reveal{from{opacity:0;transform:translateY(16px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media(prefers-reduced-motion:reduce){.flying-heart{animation:none!important;opacity:.24;will-change:auto}.finale-main-heart{animation:none!important}.finale-title,.finale-delivery{animation:none!important}}
